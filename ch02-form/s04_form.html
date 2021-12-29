@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+<form action="a.jsp" method="post">
+	<fieldset>
+		<legend>새 계정을 만듭니다.</legend>
+		<ul>
+			<li>
+				<!-- 
+				placeholder : 입력란에 힌트기능
+				autocomplete : 자동완성기능 웹에서 기본으로 지원하는데 기능을 끄고 싶을 때
+															autocomplate="off
+					그래도 안꺼지는 경우는 브라우저에서 강력하게 지원하기 떄문에 적용이 안돼서
+				 -->
+				<label for="name">이름</label>
+				<input type="text" name="name" id="name" placeholder="이름 입력"
+									autocomplete="off">
+			</li>
+			<li>
+				<label for="name">이메일</label>
+				<input type="email" name="email" id="eamil" placeholder="이메일 입력">
+			</li>
+			<li>
+				<label for="password">비밀번호</label>
+				<input type="password" name="password" id="password" >
+			</li>
+			<li>
+				<input type="submit" value="전송">
+			</li>
+
+		</ul>
+	</fieldset>
+</form>
+</body>
+</html>

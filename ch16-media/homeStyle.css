@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Readex+Pro:wght@210&display=swap');
+/* outline:1px dotted red;  */
+	*{
+		margin:0;
+		padding:0;
+		font-family: 'Noto Sans KR', sans-serif;}
+	nav{
+		width:100%;height:50px;
+		display:flex;
+	 	justify-content: center;
+		align-items:center;
+		text-decoration:none;}
+		
+	nav.nav1{
+		 background:#333;opacity:0.95;
+		 /* flex-grow:1;  //이거뭐지?*/
+
+ 		 /* background-attachment:absolute;*/
+		 position:fixed;  
+		 z-index:999;}
+	a{
+	 	text-decoration:none; }
+	a.menulink{
+	 	color:#D6D6D6;
+		font-size:10pt;
+		font-weight:350;
+		margin-left:60px;}
+	a.menulink:hover{
+	 	color:white;}
+	a.now{
+	 	color:white;
+	 	font-size:10pt;
+	 	font-weight:580;}
+	a.now:hover,p#shopping a:hover{
+	 	text-decoration: underline;}
+	 	
+	nav.nav2{
+		padding-top: 50px;
+		background:#E43140;
+		color:white;
+		font-size:10pt;
+		font-weight:580;}
+	nav.nav1 ul li{
+		list-style: none;
+		display:inline-block;
+		font-size:10pt;
+		
+		vertical-align: middle;
+		text-align:center;}	 
+	.nav .menulink{
+		text-decoration:none;
+		color:#D6D6D6;}
+	
+/* ----------------메인----------------- */
+	section.main a:hover{
+	 	text-decoration: underline;}
+	
+/* 마지막찬스 이미지 */
+	article.product01{
+		position: relative;  /* relative: 상대위치 빈공간x */
+		}
+	article.product01 img{
+		/* position: relative; */
+		width:100%;
+		margin:0 auto 10px;	
+		/* justify-content: center; */
+		}
+	 
+	article.product01 div#shopping01{
+		position: absolute;
+		color:#0066cc;
+		font-size:18pt;
+		
+		top:32%;
+		left:45%;
+		}
+	article.product01 div#shopping01 a{ /* a까지 지정해야 왜 컬러가 바뀌는지 */
+		/* position: absolute; */ /* 왜 텍스트가 세로정렬되는지 */
+		/* position: relative; */
+		color:#0066cc;
+		}	
+		
+/* iphone13pro 이미지 */	
+	article.product02{
+		position: relative;  /* relative: 상대위치 빈공간x */
+		}
+	article.product02 img{
+		/* position: relative; */
+		width:100%;
+		margin:20px auto 10px;	
+		/* justify-content: center; */
+		}
+	 
+	article.product02 div#shopping02{
+		position: absolute;
+		color:#0066cc;
+		font-size:18pt;
+		
+		top:25%;
+		left:44%;
+		}
+	article.product02 div#shopping02 a{ /* a까지 지정해야 왜 컬러가 바뀌는지 */
+		/* position: absolute; */ /* 왜 텍스트가 세로정렬되는지 */
+		/* position: relative; */
+		color:#0066cc;
+		}	
+		
+/* airpods 이미지  */	
+	article.product03 img{
+		/* position: relative; */
+		width:100%;
+		margin:20px auto 10px;	
+		/* justify-content: center; */
+		}
+	 
+/* ----------------하단 메뉴--------------- */
+	footer#page_footer{
+		padding:0;
+		width:100%;height:500px;
+		background:#F5F5F7;
+		
+	 	justify-content: center;
+		align-items:center;
+		position: relative; /* relative: 상대위치 빈공간x */	
+	}
+	hr{ width:97%; margin:0px auto;}
+	div#footect{
+	white-space:pre-line;
+	margin:10px auto;
+	padding:30px;
+	color:#88888A;
+	}	
+	nav[id*=foot] ul{
+		
+		list-style:none;
+		text-align:left;
+		color:#1D1D1F;	 
+	}
+	a[class=foot]{
+	color:#1D1D1F;
+	}
+	a[class=foot]:hover{
+	 	text-decoration: underline;}
+	
+	nav#foot01{	
+		width:200px;
+		top:25%;
+		float:left;
+		position: relative;
+	}
+	nav#foot02 {	
+		width:200px;
+		top:13%;
+		float:left;
+		position: relative;
+	}
+	nav#foot03{
+		width:200px;
+		clear:both;
+		left:11%;
+		top:30%;
+		position: relative;
+	}
+
+
+
+	
+	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 	

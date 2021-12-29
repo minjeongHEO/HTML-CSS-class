@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div.a{
+		width:500px;
+		height:100px;
+		border:1px solid orange;
+		/*가로 방향 정렬*/
+		text-align:center;
+		vertical-align: center; /* td안에서는 정렬가능한데 div에서는 세로방향정렬이 안됀다*/		
+ 	}
+ 	
+ 	div.b{
+ 		width:500px;
+ 		height:100px;
+ 		border:1px solid orange;
+ 		
+ 		display:flex;/* 화면 크기에 따라 레이아웃의 배치나 크기를 조절할때 사용 */
+ 		/* 가로방향 정렬 */
+ 		justify-content:center; /* flex-start(왼쪽),center(가운데),flex-end(오른쪽) */
+ 		/* 세로방향 정렬 */
+ 		align-items:center;/* flex-start(상단),center(중앙),flex-end(하단) */
+ 		
+ 	}
+</style>
+</head>
+<body>
+<!-- 자식태그에서의 div 는 상단 좌측이 기본 -->
+<div class="a"><span>하하</span></div>
+<div class="b"><span>호호</span></div>
+</body>
+</html>

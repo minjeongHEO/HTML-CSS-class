@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>특수문자 처리</title>
+</head>
+<body>
+<h3>문자 엔티티</h3>
+<!-- 
+&nbsp;		공백
+&lt;		< 
+&gt;		>
+&amp;		&
+&quot;		"
+&copy;		copyright표시 c
+&trade;		trademark의 약자 TM
+
+ -->
+ 공백 처리 : 공백 사용 시 &nbsp;&nbsp;&nbsp;&nbsp; 공백으로 보여짐<br>
+자바 & JSP <br>
+자바 &amp; JSP <br>
+&lt;하하&gt; <br>
+<하하> : 태그로 인식하고 하하라는 태그가 없기때문에 안됀다. <br> 
+그러나 브라우저에서는 문법을 엄격하게 지키지않아서 잘 번역하여 출력은 되지만, <br>
+누적이 되면 디자인이 깨질 수 있으므로 사용하면 안됀다.<br>
+&quot;즐거운 하루&quot; <br>
+&copy; 한국상사 <br>
+오메가&trade;
+ 
+ 
+</body>
+</html>

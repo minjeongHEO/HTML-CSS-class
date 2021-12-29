@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+<style type="text/css">
+	form{
+		width:500px;
+		margin:0 auto; /* 상하는 0 좌우는 auto */
+	}
+	ul{
+		padding:0;
+		margin:0;
+		list-style:none;
+	}
+	ul li{
+		padding:0;
+		margin:0 0 10px 0; /* 상 우 하10px 좌 */
+	}
+	label{
+		width:150px;
+		float:left; /* 를 안넣으면 width적용이 안먹는다 */ /*???*/
+	}
+	
+</style>
+</head>
+<body>
+<form action="a.jsp" method="post" oninput="result.value=parseInt(priority.value)">
+<!-- 이벤트가 발생하면 range에서 선택하면 onitput이 동작하고 range에 있는 값을 output에 복사하여  정수형태로 만들어서  전달-->
+<!-- 
+fieldset : 폼을 그룹핑하는 역할
+legend : 제목 지정
+ -->
+<fieldset>
+	<legend> 제목 프로젝트 정보 </legend>
+	<ul>
+		<li>
+			<!-- 
+			label :  입력 창 앞에 '아이디','비밀번호'처럼 붙여놓은 텍스트를 말함
+			label태그를 사용하면 폼 요소와 레이블 텍스트가 서로 연결되어 있다는 것을 브라우저가 알수있다 
+			input 태그를 의미상으로 묶어주는 역할
+			디자인 상으로는 바뀌는거없고 의미상 아이디를 써서 서로 연결되도록 한다-->
+			<!-- 
+			autofocus : 페이지를 로드했을 때 포커스를 지원한다. 처음부터 커서 깜빡거려서 입력이 바로 가능함
+			
+			required : 입력 필수 지정 "이입력란을 작성하세요"라는 표시 나옴
+			
+			input type="text" 숫자 문자 둘다 입력가능
+			
+			 -->
+			<label for="writer">이름</label>
+			<input type="text" name="name" id="writer" required autofocus> <!-- required="required"또는 required만 써도 된다 -->
+		</li>
+		<li>	
+			<!-- 
+			range : 슬라이드 막대로 표시하는 숫자 필드 
+			값을 표시하는건 다른걸 사용해야한다, output태그로-->
+			<label for ="priority">중요도</label>
+			<input type="range" name="priority" id="priority"
+					min="0" max="10" value="0">
+					
+			<!-- 
+			output : 계산의 결과를 삽입하는 태그
+			 -->		
+			<!-- <output name = "result"></output>  기본값-->
+			<output name = "result" for ="priority"></output> <!-- 위에 priority연결하고 위에 oninput작성 -->
+		</li>
+		<li>
+			<!-- 
+			number : 숫자 필드
+			숫자인지 아닌지 체크
+			민맥스값 체크
+			널값체크는 안하고 해주고싶은면 required기능을 넣어줘야한다.
+			인위적으로 조건에 맞지않는 값을 넣으면 알림창 뜬다. ex.숫자를 입력하세요 0이상 100이하의 수를 작성하세요
+			 -->
+			 <label for="hours">예상 기간</label>
+			 <input type="number" name="hours" id="hours" min="0" max="100">
+		</li>
+		<li>
+			<!-- 
+			date : 날짜 필드
+			-->
+			<label for="start_date">시작날짜</label>
+			<input type="date" name="start_date" id="start_date"> 
+			<!-- 같은 id에서 유니크하게 겹치지않게 명시해야한다. 그아이디를 위에 레이블에for=아이디 값으로 넣어준다 
+			피커를 이용할 때 2월의 마지막 날처리도 해준다. html5부터 지원
+			원래 조건체크는 다 자바스크립트로 했었는데 html5부터 필드 기능이 지원되면서 사용이 가능해짐 -->
+		</li>
+		<li>
+			<!--
+			email : 이메일 필드
+			 -->
+			 <label for="email">이메일</label>
+			 <input type="email" name="email" id="email"> <!-- @가있는지 조건체크 해준다 -->
+		</li>
+		<li>
+			<!--
+			url : URL필드 (웹사이트 주소를 명시)
+			 -->
+			 <label for="url">URL</label>
+			 <input type="url" name="url" id="url"> <!-- name을 쓰는건 서버 프로그램 연동할 때 필요해서, id는 자바스크립트, css에서 쓰기 위해서/
+														 프로토콜(https://) 조건체크 -->
+		</li>
+		<li>
+			<!--
+			search : 검색할 때 쓰는 필드
+			 -->
+			 <label for="search">검색</label>
+			 <input type="search" name="search" id="search"> <!-- 한줄 입력태그랑 비슷한데 x표시도 생김 한번에 지울 수 있다 -->
+		</li>
+		<li>
+			<input type="submit" value="전송">
+		</li>
+		
+		
+	</ul>
+</fieldset>
+
+</form>
+</body>
+</html>

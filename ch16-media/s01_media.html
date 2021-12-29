@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 
+뷰포트 : 스마트폰 화면에서 실제 내용이 표시되는 영역
+
+속성				설명				사용가능한 값				기본값
+width			뷰포트의 넓이 		device-width또는 크기		브라우저 기본 값	근데 거의 크기말고 device-width라고씀
+height			뷰포트의 높이		device-height또는 크기	브라우저 기본 값
+user-scalable	확대/축소 기능여부	yes또는 no				yes
+initial-scale	초기 확대/축소 값	1~10					1	
+minimum-scale	최소 확대/축소 값	0~10					0.25
+maximum-scale	최대 확대/축소 값	0~10					1.6
+ -->	
+ 
+ 							<!-- 일반적으로 많이쓰는 형태 나머지는 기본값씀 -->
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- initial-scale=1:제사이즈(비율)대로 들어가도록 -->
+<title>media query</title>
+<style type="text/css">
+/*992px 이상*/
+@media screen and (min-width:992px){ /* and하고 띄어쓰기 반드시!(min-width:992px){ */
+	h1{color:green;}
+	ul{
+		list-style:none;
+	}
+	
+	ul li{
+		background-color:green;
+		color:white;
+		display:inline;
+	}
+}
+/*768px~991px 태블릿pc에 해당*/
+@media screen and (min-width:768px) and (max-width:991px){
+	h1{color:blue;}
+	ul{
+		list-style:none;
+	}
+	ul li{
+		display:inline;
+		background-color:skybule;
+	}
+}
+/*767px 이하*/
+@media screen and (max-width:767px){
+	h1{color:red;}
+	ul{
+		list-style:none;
+	}
+}
+</style>
+</head>
+<body>
+<h1>미디어 쿼리</h1>
+<ul>
+	<li>서울</li>
+	<li>부산</li>
+	<li>대구</li>
+	<li>광주</li>
+	<li>인천</li>
+</ul>
+</body>
+</html>

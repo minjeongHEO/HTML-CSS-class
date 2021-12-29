@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+<form action="a.jsp" method="post">
+	<fieldset>
+		<legend>label 테스트</legend>
+		<!--  <label>태그를 이용애 radio,checkbox에 텍스트를 연결해 놓았다면 텍스트만 터치해도 선택되어 편리하게 사용가능 -->
+		<ul>
+			<li>
+				<input type="checkbox" name="score" value="korean">국어
+				<input type="checkbox" name="score" value="english">영어
+				<input type="checkbox" name="score" value="math">수학
+			</li>
+			<li>
+				<label for="grm">
+					<input type="checkbox" name="a" value="grm" id="grm">문법 <!-- 타입이 radio, checkbox인 경우 선택영역을 넓히기 위해서
+																				label로 감싸서 글자를 클릭해도 체크됨.(체크하기 편해짐) -->
+				</label>
+			</li>
+			<li>
+				<label for="wr">
+					<input type="checkbox" name="b" value="wr" id="wr">작문 <!-- label로 감싸서 글자를 클릭해도체크됨 체크하기 편해짐 -->
+				</label>
+			</li>
+			<li>
+				<label for="rd">
+					<input type="checkbox" name="c" value="rd" id="rd">독해 <!-- label로 감싸서 글자를 클릭해도체크됨 체크하기 편해짐 -->
+				</label>
+			</li>
+		</ul>
+	</fieldset>
+</form>
+
+</body>
+</html>

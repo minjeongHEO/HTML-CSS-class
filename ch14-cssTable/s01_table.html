@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table에 스타일 추가</title>
+<style type="text/css">
+	table{
+		width:500px;
+		margin:0 auto; /* 상하, 좌우 ->중앙정렬 */
+		border:1px solid orange; /* 외각선만 생겨서 td th 방마다 다줘야 안에도 선이 생긴다. -> 이중선으로 된다 */
+		border-collapse:collapse;/* 그래서 기본값이 두줄이고 collapse로 지정하면 한 줄 로 표시된다 */
+	}
+	th{
+		border:1px solid orange; 
+		padding:5px;
+		background-color:#Fc6;
+		color:white;
+	}
+	td{
+		border:1px solid orange; 
+		height:100px;
+		text-align:center; /* 가로방향 정렬 */
+		vertical-align: top; /* 세로방향 정렬,기본값은 middle */
+	}
+	tr.bg td{
+		color:#000;
+		background-color:#EAF2D3;
+		vertical-align:bottom;
+	}
+	caption{
+		color:#FF6600;font-size:11pt;font-weight:bold;margin-bottom:5px;
+	}
+	
+</style>
+</head>
+<body>
+<table>
+	<caption>table에 스타일 추가</caption>
+	<tr>
+		<th>상품명</th>
+		<th>기능</th>
+		<th>단가</th>
+	</tr>
+	<tr>
+		<td>서울</td>
+		<td>부산</td>
+		<td>광주</td>
+	</tr>
+	<tr class="bg">
+		<td>하늘</td>
+		<td>바다</td>
+		<td>산</td>
+	</tr>
+</table>
+</body>
+</html>

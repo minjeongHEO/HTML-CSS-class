@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블</title>
+</head>
+<body>
+<h3>th,td 태그의 사용 및 속성 지정</h3>
+<table border="1">
+	<tr>
+		<th width="100">서울</th>
+		<th width="100">부산</th>
+		<th width="100">광주</th>
+	</tr>
+	<tr>
+		<td bgcolor="#f3f3f3">왼쪽</td> <!-- 위에있는 넓이에 맞춰진다 -->
+		<td align="center">가운데</td>
+		<td align="right">오른쪽</td>
+	</tr>
+	<tr>
+		<td height="100" valign="top">상단</td> <!-- 하나의 높이에 동일한 높이 -->
+		<td background="../images/landscape.jpg">중앙</td>
+		<td valign="bottom">하단</td>
+	</tr>
+	<tr>
+		<td><img src="../images/landscape.jpg" width="100"></td>
+		<td><img src="../images/buzz.png" width="100"></td>
+		<td><img src="../images/forky.png" width="100"></td>
+	</tr>
+</table>
+
+<h3>셀 병합하기</h3>
+<table border="1">
+	<tr>
+		<td width="100">1</td>
+		<!-- 같은 행에서 셀을 합칠 때 colspan사용 -->
+		<td width="200" colspan="2">2,3</td> <!-- 같은행에서 열을 두개 합쳤다 -->
+	</tr>
+	<tr>
+		<!-- 다른 행의 셀을 합칠 떄 rowspan사용 -->
+		<td rowspan="2">2</td>
+		<td>5</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>9</td>
+	</tr>
+</table>
+
+</body>
+</html>
