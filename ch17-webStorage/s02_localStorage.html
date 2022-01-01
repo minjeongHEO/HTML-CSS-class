@@ -1,48 +1,62 @@
 <!DOCTYPE html>
+<!-- prettier-ignore -->
 <html>
   <head>
     <meta charset="UTF-8" />
     <title>로컬 스토리지</title>
     <script type="text/javascript">
-      window.onload = function () {
-	    	  
-	   	  //직전에 저장된 설정을 읽어옴
-	   	  load_setting();
-	    	  
-    	  
-        //폼과 이벤트 연결
-        document.getElementById("frm").onsubmit = function (event) {
-          //#안붙이고 아이디 명시, 쿼리셀렉터쓸때만 붙인다.
-          //기본 이벤트 제거
-          event.preventDefault();
+      window.onload = function () {//1.밑에의 태그들을 인식한 후에 처리해야하니까
 
-          //설정값 저장
+        //6.직전에 저장된 설정을 읽어옴 을 window.onload 함수 안에 넣어줘야한다.
+        //창을 끄고 켰을 떄도 이 메서드가 동작하므로 직전에 설정된 값이 적용되어있다.
+        load_setting();
+
+        //3.폼과 이벤트 연결
+        //document.getElementById("frm").onsubmit=function() {};
+        document.getElementById("frm").onsubmit = function (event) {
+          //(기본이벤트를 제거할 때 객체가 필요)이벤트 객체를 받아야하니까 매개변수를 event라고 준다
+          //메서드에  id라고 명시되어있어서 #안붙이고 아이디 명시(제이쿼리에서는 붙인다), 
+          //쿼리셀렉터, 쿼리셀렉터올 쓸때는 # 붙인다.
+          //기본 이벤트 제거
+          event.preventDefault(); //이벤트 객체에서 쓰는 자바스크립트 표준 (제이쿼리에서도 쓸 수 있다)
+                                  //js에서 기본이벤트 제거시 했던 return false; 제이쿼리에서도 사용가능
+          //return false;쓸 때는 event매개변수 없애고 쓴다.
+
+          //밑에 설정한 설정값 저장하는 함수
           save_setting();
         };
-      };
+      }; 
+      
+      
 
-      //로컬 스토리지에 저장된 데이터를 반환
+      //어짜피 함수는 호출해야 실행되는 것이기 때문에 window.onload = function함수 안에 생성해도 되고 밖에생성해도 된다.
+      
+      //5.로컬 스토리지에 저장된 데이터를 반환 
+      //로컬스토리지에 저장을 해놨으니까 매번 페이지를 호출 할 때마다 설정값이 적용되어있어야한다.
+      //이작업을 안했을 경우는 로컬스토리지와 연동을 못해서 초기화된 상태로 페이지가 나온다.
       function load_setting() {
-    	  //로컬 스토리지에서 데이터 읽기
-    	  var bgColor = localStorage.getItem('bg_color');
-    	  var textColor = localStorage.getItem('text_color');
-    	  var textSize = localStorage.getItem('text_size');
-    	  
-    	  //태그에 로컬 스토리지에서 읽어온 값 설정
-    	  var bg_color = document.getElementById('bg_color');
-    	  bg_color.value = bgColor;
-    	  
-    	  var text_color = document.getElementById('text_color');
-    	  text_color.value = textColor;
-    	  
-    	  var text_size = document.getElementById('text_size');
-    	  text_size.value = textSize;
-    	  
-    	  //설정값을 이용해서 스타일을 태그에 반영
-    	  apply_data();
-    	  
+        //로컬 스토리지에서 데이터 읽어오기
+        var bgColor = localStorage.getItem("bg_color");//getItem이라는 메서드가 "bg_color"라는 키를 넣어주면 value를 반환해준다.
+        var textColor = localStorage.getItem("text_color");
+        var textSize = localStorage.getItem("text_size");
+
+        //태그에 로컬 스토리지에서 읽어온 값 설정
+        var bg_color = document.getElementById("bg_color");
+        bg_color.value = bgColor;
+
+        var text_color = document.getElementById("text_color");
+        text_color.value = textColor;
+
+        var text_size = document.getElementById("text_size");
+        text_size.value = textSize;
+
+        //설정값을 이용해서 스타일을 태그에 반영
+        apply_data();
+        //밑에있는 태그를 다 인식하고 맨위의 window.onload=function(){};이 동작을하고
+        //이벤트연결쪽은 이벤트가 발생할 때만 실행하고 데이터를 읽어오는 작업을해야한다.6번으로 이동
       }
-      //로컬 스토리지에 설정값을 저장
+      //2.로컬 스토리지에 설정값을 저장 (데이터를 저장해야 반영할 수 있으므로 먼저)
+      //입력받은것들을 접근해서 읽어온다
       function save_setting() {
         var bg_color = document.getElementById("bg_color");
         var text_color = document.getElementById("text_color");
@@ -56,28 +70,27 @@
         //설정값을 이용해서 스타일을 태그에 반영
         apply_data();
       }
-      //스타일을 태그에 반영
+      //4.스타일을 태그에 반영
       function apply_data() {
-      var bg_color = document.getElementById("bg_color");
-      document.body.style.backgroundColor = bg_color.value;
-      
-      var text_color = document.getElementById("text_color");
-      document.body.style.color = text_color.value; //value가 있어야 데이터를 넣을 수 있다.
-      
-      var text_size = document.getElementById("text_size");
-      document.body.style.fontSize = text_size.value;
-      
+        var bg_color = document.getElementById("bg_color");
+        document.body.style.backgroundColor = bg_color.value;
+
+        var text_color = document.getElementById("text_color");
+        document.body.style.color = text_color.value; //value가 있어야 데이터를 넣을 수 있다.
+
+        var text_size = document.getElementById("text_size");
+        document.body.style.fontSize = text_size.value;
       }
     </script>
   </head>
   <body>
     <h2>환경 설정 값 기억</h2>
     <form id="frm">
-      <fieldset>
-        <legend>색상/글자 크기 선택</legend>
-        <ul>
-          <li>
-            <label for="bg_color">배경색</label>
+      <fieldset><!-- 폼을 그룹핑하는 역할의 태그로 테두리가 만들어진다. -->
+        <legend>색상/글자 크기 선택</legend> <!-- 필드셋안에들어가며 제목을 지정하는 태그 -->
+        <ul><!-- 순서가 없는 목록 -->
+          <li><!-- 목록을 만드는 태그로 단독으로 안쓰인다 -->
+            <label for="bg_color">배경색</label><!-- input태그에 라벨을 붙일떄 -->
             <input type="text" name="bg_color" id="bg_color" />
           </li>
           <li>
@@ -93,9 +106,24 @@
             </select>
           </li>
         </ul>
-        <input type="submit" value="저장" />
+        <input type="submit" value="저장" /><!-- submit은서버에 전송하고 전송안하려고 기본이벤트를 제거한다 -->
       </fieldset>
     </form>
   </body>
 </html>
 
+<!-- 
+  
+  [개인화 서비스 구현하기]
+  
+      첫번째가 데이터를 저장하는 부분
+      function save_setting() {
+      폼과 이벤트 연결
+
+      두번째가 스타일을 태그에 반영
+      function apply_data() {
+      
+      세번째가 로컬스토리지에서 저장된 데이터 반환
+      function load_setting() {
+
+  -->

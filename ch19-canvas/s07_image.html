@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var canvas = document.getElementById('canvas');
+		if(canvas.getContext){
+			var context = canvas.getContext('2d');
+					
+			//이미지 객체 생성
+			var img = new Image();
+			//원본이미지 읽기
+			img.src = '../images/landscape.jpg';
+			//이미지 읽기가 완료되면 onload에 대입된 함수 호출
+			img.onload = function(){
+				context.drawImage(img,10,10);//이미지 객체, x, y
+				context.drawImage(img,10,500,200,100);//이미지 객체, x,y,width,height
+			};
+			
+ 		}else{
+			alert('브라우저가 캔버스를 지원하지 않습니다.');
+		}
+		
+	};
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="700"></canvas>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스</title>
+<style type="text/css">
+#canvas {
+	border: 1px solid #999;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var canvas = document.getElementById('canvas');
+		if(canvas.getContext){//메서드가 존재하면 트루 존재하지않으면 펄스
+			//캔버스지원
+			var context = canvas.getContext('2d');
+			//색상 지정
+			context.fillStyle = 'rgb(200,0,0)';
+			context.fillRect(10,10,100,100);//사각형 x y width height
+		}else{//근데 요즘은 알려져있는 브라우저는 다 캔버스지원함
+			alert('브라우저가 캔버스를 지원하지 않습니다.');
+		}
+	};
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300"> </canvas>
+</body>
+</html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- prettier-ignore -->
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -38,13 +39,11 @@
         //파일명
         document.getElementById("filename").innerHTML = file.name; //textContect사용해도됨
         //파일의 용량
-        document.getElementById("filesize").textContent =
-          "(" + file.size + "bytes)";
+        document.getElementById("filesize").textContent = "(" + file.size + "bytes)";
         //파일 타입
         document.getElementById("filetype").textContent = file.type;
         //파일의 마지막갱신날짜
-        document.getElementById("filedate").textContent =
-          file.lastModifiedDate.toLocaleString(); //영문포맷을 한글포맷으로
+        document.getElementById("filedate").textContent = file.lastModifiedDate.toLocaleString(); //영문포맷을 한글포맷으로
 
         //파일의 내용 읽기
         var reader = new FileReader();
@@ -66,11 +65,7 @@
   </head>
   <body>
     <h2>현재 시스템의 파일 읽기</h2>
-    <input
-      type="file"
-      id="file"
-      accept="text/*"
-    /><!-- accept="text/* 변경가능하지만 우선적으로 파일을 보여준다 -->
+    <input type="file" id="file" accept="text/*" /><!-- accept="text/* 변경가능하지만 우선적으로 파일을 보여준다 -->
     <select id="encoding">
       <option>EUC-KR</option>
       <option>UTF-8</option>
